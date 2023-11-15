@@ -12,7 +12,9 @@ const booksRouter = require("./Routes/books");
 const borrowinBooksRouter = require("./Routes/borrowingBooks");
 const analyticalsRouter = require("./Routes/analitics");
 const app = express();
-app.use(morgan("tiny"));
+if (process.env.NODE_ENV== 'development)
+    {
+app.use(morgan("tiny"));}
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
